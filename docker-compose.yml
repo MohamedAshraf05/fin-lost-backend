@@ -1,0 +1,34 @@
+services:
+  db:
+    image: mysql:8.0
+    container_name: finlost_db
+    restart: always
+    environment:
+      MYSQL_DATABASE: finlost
+      MYSQL_USER: finlostuser
+      MYSQL_PASSWORD: finlostpass
+      MYSQL_ROOT_PASSWORD: rootpass
+    ports:
+      - "3307:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  web:
+    build: .
+    container_name: fin-lost-backend
+    command: sh /app/wait_for_db.sh
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    environment:
+      DB_NAME: finlost
+      DB_USER: finlostuser
+      DB_PASSWORD: finlostpass
+      DB_HOST: db
+      DB_PORT: 3306
+
+volumes:
+  mysql_data:

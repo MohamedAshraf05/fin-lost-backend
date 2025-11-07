@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: my-django-api
+    env: docker
+    branch: main
+    plan: free
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: SECRET_KEY
+        generateValue: true
+      - key: DEBUG
+        value: "False"
+    healthCheckPath: /

@@ -146,14 +146,28 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 # }
 
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': os.environ.get("DB_NAME"),
+#         'USER': os.environ.get("DB_USER"),
+#         'PASSWORD': os.environ.get("DB_PASSWORD"),
+#         'HOST': os.environ.get("DB_HOST", "db"),
+#         'PORT': os.environ.get("DB_PORT", 3307),
+#         'OPTIONS': {
+#             'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
+#         }
+#     }
+# }
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': os.environ.get("DB_NAME"),
-        'USER': os.environ.get("DB_USER"),
-        'PASSWORD': os.environ.get("DB_PASSWORD"),
-        'HOST': os.environ.get("DB_HOST", "db"),
-        'PORT': os.environ.get("DB_PORT", 3307),
+        'NAME': "M7mda4rf005$default",
+        'USER': "M7mda4rf005",
+        'PASSWORD': "EiSzxKTVjgNE45$",
+        'HOST': "M7mda4rf005.mysql.pythonanywhere-services.com",
+        'PORT': 3306,
         'OPTIONS': {
             'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
         }
